@@ -11,7 +11,9 @@ contactForm.addEventListener("submit", async (e) => {
       body: formData,
     });
 
-    console.log(response);
+    if (response.ok) {
+      window.location.href = "/thank-you.html";
+    }
   } catch (error) {
     console.log("Submission failed. Please try again. ");
   }
