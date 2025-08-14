@@ -1,0 +1,5 @@
+SMTP_HOST=mail.danieldeaconescu.com
+SMTP_PORT=465
+SMTP_USER=contact@danieldeaconescu.com
+SMTP_PASS=contactPassword!23
+RECIPIENT_EMAIL=daniel.deaconescu98@gmail.com
