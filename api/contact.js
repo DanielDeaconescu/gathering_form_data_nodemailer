@@ -1,16 +1,16 @@
 import nodemailer from "nodemailer";
 
 export default async (req, res) => {
-  // Parse form data
-  const formData = await new Promise((resolve) => {
+  // Parse JSON data
+  const data = await new Promise((resolve) => {
     let body = "";
     req.on("data", (chunk) => (body += chunk));
-    req.on("end", () => resolve(new URLSearchParams(body)));
+    req.on("end", () => resolve(JSON.parse(body)));
   });
-  // Extract fields
-  const name = formData.get("full-name");
-  const email = formData.get("email");
-  const message = formData.get("message");
+
+  const name = data["full-name"];
+  const email = data.email;
+  const message = data.message;
 
   // Send email
   const transporter = nodemailer.createTransport({
